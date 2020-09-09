@@ -26,3 +26,5 @@ gsettings set org.gnome.system.proxy mode 'none'
 gsettings list-recursively org.gnome.system.proxy
 
 echo -n ""|sudo tee /etc/apt/apt.conf
+
+echo -n ""|sudo tee /etc/wgetrc

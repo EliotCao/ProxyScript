@@ -32,3 +32,11 @@ Acquire::https::proxy "https://$proxyserveraddr:$proxyserverport/";
 Acquire::ftp::proxy "ftp://$proxyserveraddr:$proxyserverport/";
 Acquire::socks::proxy "socks://$proxyserveraddr:$proxyserverport/";
 EOF
+
+# for apt
+cat <<-EOF| sudo tee /etc/wgetrc
+use_proxy = on
+http_proxy =  http://$proxyserveraddr:$proxyserverport/
+https_proxy =  http://$proxyserveraddr:$proxyserverport/
+ftp_proxy =  ftp://$proxyserveraddr:$proxyserverport/
+EOF
